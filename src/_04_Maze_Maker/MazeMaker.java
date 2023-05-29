@@ -18,27 +18,95 @@ public class MazeMaker {
         rows = r;
         cols = c;
         maze = new Maze(rows, cols);
-
+        int ranrow;
+        int rancol;
+        int ranerow;
+        int ranecol;
         // 1. Pick a random cell along the border and remove its exterior wall.
         //    This will be the starting point. Then select a random cell along
         //    the opposite wall and remove its exterior wall. This will be the
         //    finish line.
-        
+    if(randGen.nextInt(1)==0){
+    	  if (randGen.nextInt(1)==0) {
+			 ranrow = 0;
+			rancol = randGen.nextInt(4);
+			ranerow = 4;
+			ranecol = randGen.nextInt(4);
+		}
+    	  else {
+    		  ranrow = 4;
+    		  rancol = randGen.nextInt(4);
+    		  ranerow = 0;
+  			ranecol = randGen.nextInt(4);
+    	  }
+      }
+    else {
+    	 if (randGen.nextInt(1)==0) {
+ 			 rancol = 0;
+ 			 ranrow = randGen.nextInt(4);
+ 			 ranecol = 4;
+ 			 ranerow = randGen.nextInt(4);
+ 		}
+     	  else {
+     		  rancol = 4;
+     		  ranrow = randGen.nextInt(4);
+     		 ranecol = 0;
+ 			 ranerow = randGen.nextInt(4);
+	}
+    }
+    Cell start = new Cell(ranrow,rancol);
+    Cell end = new Cell(ranerow,ranecol);
+    if (ranrow==0) {
+		start.setNorthWall(false);
+	}
+    if (ranrow==4) {
+		start.setSouthWall(false);
+	}
+    if (rancol==0) {
+		start.setWestWall(false);
+	}
+    if (rancol==4) {
+		start.setEastWall(false);
+	}
+    if (ranerow==0) {
+		start.setNorthWall(false);
+	}
+    if (ranerow==4) {
+		start.setSouthWall(false);
+	}
+    if (ranecol==0) {
+		start.setWestWall(false);
+	}
+    if (ranecol==4) {
+		start.setEastWall(false);
+	}
         // 2. select a random cell in the maze to start 
-        
+        int randcr = randGen.nextInt(4);
+        int randcc = randGen.nextInt(4);
         // 3. call the selectNextPath method with the randomly selected cell
-
+        Cell randcell = new Cell(randcr,randcc);
+        selectNextPath(randcell);
         return maze;
     }
 
     // 4. Complete the selectNextPathMethod
     private static void selectNextPath(Cell currentCell) {
+    	
+    	
         // A. SET currentCell as visited
-
+    	currentCell.setBeenVisited(true);
         // B. check for unvisited neighbors using the cell
-
+   if (getUnvisitedNeighbors(currentCell).size()>=1) {
+	   int randunvis =randGen.nextInt(getUnvisitedNeighbors(currentCell).size());
+		Cell unvis = getUnvisitedNeighbors(currentCell).get(randunvis);
+		uncheckedCells.push(unvis);
+		removeWalls(currentCell, unvis);
+		currentCell = unvis;
+		currentCell.setBeenVisited(true);
+		selectNextPath(currentCell);
+   } 
         // C. if has unvisited neighbors,
-
+    	
         // C1. select one at random.
 
         // C2. push it to the stack
