@@ -65,43 +65,43 @@ import org.junit.Test;
 
 public class _02_BaseballTicketsTest {
 
-    @Test
-    public void test1() {
-        List<Integer> list = Arrays.asList(2, 5, 3, 6, 4); 
-        ArrayDeque<Integer> ticketsQueue = new ArrayDeque<Integer>(list);
-        
-        assertEquals(6, _02_BaseballTickets.calculateWaitTime(ticketsQueue, 0));
-    }
-    
-    @Test
-    public void test2() {
-        List<Integer> list = Arrays.asList(2, 5, 3, 6, 4); 
-        ArrayDeque<Integer> ticketsQueue = new ArrayDeque<Integer>(list);
-        
-        assertEquals(18, _02_BaseballTickets.calculateWaitTime(ticketsQueue, 1));
-    }
-    
-    @Test
-    public void test3() {
-        List<Integer> list = Arrays.asList(2, 5, 3, 6, 4); 
-        ArrayDeque<Integer> ticketsQueue = new ArrayDeque<Integer>(list);
-        
-        assertEquals(12, _02_BaseballTickets.calculateWaitTime(ticketsQueue, 2));
-    }
-    
-    @Test
-    public void test4() {
-        List<Integer> list = Arrays.asList(2, 5, 3, 6, 4); 
-        ArrayDeque<Integer> ticketsQueue = new ArrayDeque<Integer>(list);
-        
-        assertEquals(20, _02_BaseballTickets.calculateWaitTime(ticketsQueue, 3));
-    }
-    
-    @Test
-    public void test5() {
-        List<Integer> list = Arrays.asList(2, 5, 3, 6, 4); 
-        ArrayDeque<Integer> ticketsQueue = new ArrayDeque<Integer>(list);
-        
-        assertEquals(17, _02_BaseballTickets.calculateWaitTime(ticketsQueue, 4));
-    }
+	@Test
+	public void test1() {
+		List<Integer> list = Arrays.asList(2, 5, 3, 6, 4);
+		ArrayDeque<Integer> ticketsQueue = new ArrayDeque<Integer>(list);
+
+		assertEquals(6, _02_BaseballTickets.calculateWaitTime(ticketsQueue, 0));
+	}
+
+	@Test
+	public void test2() {
+		List<Integer> list = Arrays.asList(2, 5, 3, 6, 4);
+		ArrayDeque<Integer> ticketsQueue = new ArrayDeque<Integer>(list);
+
+		assertEquals(18, _02_BaseballTickets.calculateWaitTime(ticketsQueue, 1));
+	}
+
+	@Test
+	public void test3() {
+		List<Integer> list = Arrays.asList(2, 5, 3, 6, 4);
+		ArrayDeque<Integer> ticketsQueue = new ArrayDeque<Integer>(list);
+
+		assertEquals(12, _02_BaseballTickets.calculateWaitTime(ticketsQueue, 2));
+	}
+
+	@Test
+	public void test4() {
+		List<Integer> list = Arrays.asList(2, 5, 3, 6, 4);
+		ArrayDeque<Integer> ticketsQueue = new ArrayDeque<Integer>(list);
+
+		assertEquals(20, _02_BaseballTickets.calculateWaitTime(ticketsQueue, 3));
+	}
+
+	@Test
+	public void test5() {
+		List<Integer> list = Arrays.asList(2, 5, 3, 6, 4);
+		ArrayDeque<Integer> ticketsQueue = new ArrayDeque<Integer>(list);
+
+		assertEquals(17, _02_BaseballTickets.calculateWaitTime(ticketsQueue, 4));
+	}
 }

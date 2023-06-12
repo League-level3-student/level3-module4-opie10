@@ -9,12 +9,12 @@ import org.junit.Test;
 
 public class TestMatchingBracketsTest {
 
-    @Test
-    public void testMatchingBrackets() {
-        assertTrue(TestMatchingBrackets.doBracketsMatch("{}"));
-        assertTrue(TestMatchingBrackets.doBracketsMatch("{{}}"));
-        assertTrue(TestMatchingBrackets.doBracketsMatch("{}{}{{}}"));
-        assertFalse(TestMatchingBrackets.doBracketsMatch("{{}"));
-        assertFalse(TestMatchingBrackets.doBracketsMatch("}{"));
-    }
+	@Test
+	public void testMatchingBrackets() {
+		assertTrue(TestMatchingBrackets.doBracketsMatch("{}"));
+		assertTrue(TestMatchingBrackets.doBracketsMatch("{{}}"));
+		assertTrue(TestMatchingBrackets.doBracketsMatch("{}{}{{}}"));
+		assertFalse(TestMatchingBrackets.doBracketsMatch("{{}"));
+		assertFalse(TestMatchingBrackets.doBracketsMatch("}{"));
+	}
 }

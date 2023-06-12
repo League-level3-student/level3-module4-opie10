@@ -8,39 +8,37 @@ public class TestMatchingBrackets {
 	 * a matching closing bracket
 	 */
 	public static boolean doBracketsMatch(String b) {
-if (b.charAt(b.length()-1)=='{'||b.charAt(0)=='}') {
-	return false;
-}
+		if (b.charAt(b.length() - 1) == '{' || b.charAt(0) == '}') {
+			return false;
+		}
 		int isgood = 0;
 		boolean check = false;
 		Stack<Character> charst = new Stack<Character>();
-		
+
 		for (int i = 0; i < b.length(); i++) {
 			charst.push(b.charAt(i));
-		
+
 		}
-		
+
 		for (int i = 0; i <= charst.size(); i++) {
 			if (charst.peek() == '{') {
-				
-				isgood =isgood+ 1;
+
+				isgood = isgood + 1;
 			}
 			if (charst.peek() == '}') {
-			
-				isgood= isgood -1;
-				
+
+				isgood = isgood - 1;
+
 			}
-		charst.pop();
-		i=0;
+			charst.pop();
+			i = 0;
 		}
-		
+
 		if (isgood == 0) {
 			check = true;
-		
-			
-		}
-		else {
-			check=false;
+
+		} else {
+			check = false;
 
 		}
 		return check;
